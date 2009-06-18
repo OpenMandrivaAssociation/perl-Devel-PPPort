@@ -1,21 +1,18 @@
+%define upstream_name    Devel-PPPort
+%define upstream_version 3.19
 
-%define realname   Devel-PPPort
-%define version    3.17
-%define release    %mkrel 2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    Portability aid for your XS code
-Source:     http://www.cpan.org/modules/by-module/Devel/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:     http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl-devel
-
-
-
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Perl's API has changed over time, gaining new features, new functions,
@@ -34,7 +31,7 @@ from 5.003 to 5.10.0 are supported.
 This module is used by 'h2xs' to write the file _ppport.h_.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -55,5 +52,4 @@ rm -rf %buildroot
 %doc README Changes
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
