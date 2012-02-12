@@ -1,18 +1,17 @@
-%define upstream_name    Devel-PPPort
+%define upstream_name Devel-PPPort
 %define upstream_version 3.20
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Summary:    Portability aid for your XS code
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:     http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Summary:	Portability aid for your XS code
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl-devel
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
 
 %description
 Perl's API has changed over time, gaining new features, new functions,
@@ -41,15 +40,9 @@ This module is used by 'h2xs' to write the file _ppport.h_.
 make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
-
+%{perl_vendorlib}/*
