@@ -1,5 +1,5 @@
 %define upstream_name Devel-PPPort
-%define upstream_version 3.20
+%define upstream_version 3.21
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	Portability aid for your XS code
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Devel/Devel-PPPort-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 
@@ -82,4 +82,5 @@ make test
 
 * Mon May 11 2009 cpan2dist 3.17-1mdv
 - initial mdv release, generated with cpan2dist
+
 
