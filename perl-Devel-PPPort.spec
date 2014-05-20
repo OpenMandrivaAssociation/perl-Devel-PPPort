@@ -1,5 +1,5 @@
 %define upstream_name Devel-PPPort
-%define upstream_version 3.23
+%define upstream_version 3.24
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -8,6 +8,7 @@ Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	Portability aid for your XS code
+
 
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.gz
@@ -47,6 +48,7 @@ make test
 %doc README Changes
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 
 
 
